@@ -1,0 +1,179 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        animation: bgcolor infinite 5s;
+    }
+
+    @keyframes bgcolor {
+        0% {
+            background: #eccc68;
+        }
+
+        20% {
+            background: #ff7f50;
+        }
+
+        40% {
+            background: #ff6348;
+        }
+
+        60% {
+            background: #ff6b81;
+        }
+
+        80% {
+            background: #feca57;
+        }
+
+        100% {
+            background: #eccc68;
+        }
+    }
+</style>
+<body>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body" >
+            <h1 class="text-center mb-3">
+                <i class="fas fa-user-plus"></i> Register
+            </h1>
+            <%-include('./partials/messages.ejs'); %>
+            <form action="/user/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+                        value="<%= typeof name != 'undefined' ? name : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="collegeid">College ID</label>
+                    <input type="number" id="rollnumber" name="rollnumber" " class="form-control" placeholder="Roll Number"
+                        value="<%= typeof rollnumber != 'undefined' ? rollnumber : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                        value="<%= typeof email != 'undefined' ? email : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control"
+                        placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" name="password2" class="form-control"
+                        placeholder="Confirm Password"
+                        value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="fathername">Father's Name</label>
+                    <input type="name" id="fathername" name="fathername" class="form-control" placeholder="Father's Name"
+                        value="<%= typeof fathername != 'undefined' ? fathername : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="fathername">Mother's Name</label>
+                    <input type="name" id="mothername" name="mothername" class="form-control" placeholder="Mother's Name"
+                        value="<%= typeof mothername != 'undefined' ? mothername : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <span style="margin-left: 5px;"><input type="radio" name="gender" id="gender" value="Male">Male</span>
+                    <span style="margin-left: 7px;"><input type="radio" name="gender" id="gender" value="Female">Female</span>
+                    <span style="margin-left: 7px;"><input type="radio" name="gender" id="gender" value="Other">Other</span>
+                    <br>
+                        
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="0" max="100" class="form-control" placeholder="Age"
+                        value="<%= typeof age != 'undefined' ? age : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" id="dob" name="dob" min="1980-01-1" max="2020-12-31" class="form-control" placeholder="dob"
+                        value="<%= typeof dob != 'undefined' ? dob : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="contactnumber">Contact Number</label>
+                    <input type="number" id="contactnumber" name="contactnumber" min="1000000000" max="9999999999" class="form-control" placeholder="Contact Number"
+                        value="<%= typeof contactnumber != 'undefined' ? contactnumber : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="bloodgroup">Blood Group</label>
+                    <input list="bloodgroup" id="bloodgroup" name="bloodgroup"  class="form-control" placeholder="Blood Group"
+                        value="<%= typeof bloodgroup != 'undefined' ? bloodgroup : '' %>" />
+                        <datalist id="bloodgroup">
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input list="state" id="state" name="state" class="form-control" placeholder="State"
+                        value="<%= typeof state != 'undefined' ? state : '' %>" />
+                        <datalist id="state">
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Orissa">Orissa</option>
+                            <option value="Pondicherry">Pondicherry</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttaranchal">Uttaranchal</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </datalist>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="pincode">Pin Code</label>
+                    <input type="number" id="pincode" name="pincode"  class="form-control" placeholder="pincode"
+                        value="<%= typeof pincode != 'undefined' ? pincode : '' %>" />
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address"  class="form-control" placeholder="Address"
+                        value="<%= typeof address != 'undefined' ? address : '' %>" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Register
+                </button>
+            </form>
+            <p class="lead mt-4">Have An Account? <a href="/user/login">Login</a></p>
+        </div>
+    </div>
+</div>
+</body>

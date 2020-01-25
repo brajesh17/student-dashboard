@@ -1,0 +1,135 @@
+<body style="background-color: #99ff99;">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body" style="background-color: #99ff99;">
+                <h1 class="text-center mb-3">
+                    <i class="fas fa-user-plus"></i> Details
+                </h1>
+
+                <form action="/user/register" method="POST">
+                    <div class="form-group">
+                        <label for="fathername"><b><span style="margin-left: 77px; font-size: 15px;">Father's Name<span
+                                        style="color: #e60000;">*</span>:</span></b></label>
+                        <input type="text" class="fathername" placeholder="Father's Name" name="fathername" id="fname" required>
+                        <br>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mothername"><b><span style="margin-left: 78px; font-size: 15px;">Mother's Name<span
+                                        style="color: #e60000;">*</span>:</span></b></label>
+                        <input type="text" class="mothername" placeholder="Mother's Name" name="lstname" id="mname" required>
+                        <br>
+                    </div>
+                <div class="form-group">
+                    <label for="gender"><b><span style="margin-left: 101px; font-size: 15px;">Gender<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <span style="margin-left: 5px;"><input type="radio" name="gender" id="gender" value="Male">Male</span>
+                    <span style="margin-left: 7px;"><input type="radio" name="gender" id="gender" value="Female">Female</span>
+                    <span style="margin-left: 7px;"><input type="radio" name="gender" id="gender" value="Other">Other</span>
+                    <br>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Age"><b><span style="margin-left: 124px; font-size: 15px;">Age<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input type="number" class="Age" name="Age" id="age" value="" min="0" max="100" placeholder="Age" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Date"><b><span style="margin-left: 60px; font-size: 15px;">Date Of Birth<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input type="date" class="Date" name="Date" id="date" value="" min="1970-01-4" max="2017-12-30" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Contact"><b><span style="margin-left: 36px; font-size: 15px;">Contact Number<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input type="number" class="Contact" name="Contact" value="" id="number" placeholder="Contact No." min="1000000000"
+                        max="9999999999" title="10 Digits Required" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="blood"><b><span style="margin-left: 61px; font-size: 15px;">Blood Group<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input list="blood" class="blood" name="blood" id="grp" placeholder="Blood group" required>
+                    <datalist id="blood">
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </datalist>
+                </div>
+                
+                </datalist>
+                
+                <div class="form-group">
+                    <label for="state"><b><span style="margin-left: 116px; font-size: 15px;">State<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input list="state" class="state" id="state" name="state" placeholder="State" required>
+                    <datalist id="state">
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Orissa">Orissa</option>
+                        <option value="Pondicherry">Pondicherry</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttaranchal">Uttaranchal</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </datalist>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pin"><b><span style="margin-left: 90px; font-size: 15px;">Pin code<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input type="number" class="pin" name="pin" id="pin" value="" placeholder="Pincode..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="addrs"><b><span style="margin-left: 92px; font-size: 15px;">Address<span
+                                    style="color: #e60000;">*</span>:</span></b></label>
+                    <input type="text" class="addrs" name="addrs" id="adress" value="" placeholder="Address">
+                </div>
+                
+                <span style="margin-left: 173px; font-size: 14px;"><input type="checkbox" onclick="" required>I hereby declare that the
+                    details furnished
+                    above<br><span style="margin-left: 187px;"> are <b>True</b> and <b>Correct</b>.</span> </span><br>               
+                <button type="submit" class="btn btn-primary btn-block">
+                    Register
+                </button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>

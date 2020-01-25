@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            animation: bgcolor infinite 5s;
+        }
+
+        @keyframes bgcolor {
+            0% {
+                background: #eccc68;
+            }
+
+            20% {
+                background: #ff7f50;
+            }
+
+            40% {
+                background: #ff6348;
+            }
+
+            60% {
+                background: #ff6b81;
+            }
+
+            80% {
+                background: #feca57;
+            }
+
+            100% {
+                background: #eccc68;
+            }
+        }
+
+        i {
+            position: relative;
+            animation: myfirst 5s linear 0s infinite alternate;
+        }
+
+        @keyframes myfirst {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: yellow;
+                left: 20px;
+                top: 0px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        .studdash {
+            animation: mysecond 1s linear 0s infinite alternate;
+        }
+
+        @keyframes mysecond {
+            0% {
+                font-size: 50px;
+            }
+
+            100% {
+                font-size: 55px;
+            }
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+        }
+
+        @keyframes listcolor {
+            0% {
+                background: #9c88ff;
+            }
+
+            20% {
+                background: #ff7979;
+            }
+
+            40% {
+                background: #e056fd;
+            }
+
+            60% {
+                background: #ffbe76;
+            }
+
+            80% {
+                background: #e056fd;
+            }
+
+            100% {
+                background: #9c88ff;
+            }
+        }
+
+        ul.topnav li {
+            float: left;
+        }
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: 900;
+            font-family: Forte;
+            font-size: xx-large;
+            border-left: 2px solid white;
+            border-right: 2px solid white;
+            background-color: black;
+
+        }
+
+        ul.topnav li a:hover:not(.active) {
+            background-color: rgb(124, 57, 57);
+        }
+
+        ul.topnav li a.active {
+            background-color: rgb(76, 99, 175);
+        }
+
+        ul.topnav li a:hover.active {
+            text-decoration: none;
+        }
+
+
+        ul.topnav li.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+
+
+
+        ul.topnava li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: 900;
+
+            font-family: Pristina;
+            font-size: 45px;
+            border: 2px solid black;
+
+
+        }
+
+        ul.topnava li a:hover:not(.active) {
+            background-color: rgb(124, 57, 57);
+        }
+
+        ul.topnava li a.active {
+            background-color: #4CAF50;
+        }
+
+        ul.topnava li a:hover.active {
+            text-decoration: none;
+        }
+
+
+        ul.topnava li.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            ul.topnava li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+</head>
+
+<body>
+    <div style="background-color: black;"><span style="margin-left: 400px;"><i class="fas fa-yin-yang fa-3x"></i><span
+                style=" font-family: 'freestyle script';margin-left: 20px;font-size: 40px;color: white;">Student
+                Dashboard</span></span> </div><br>
+
+
+    <ul class="topnav">
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/user/profile">Profile</a></li>
+        <li><a href="/user/settings">Settings</a></li>
+        <li class="right"><a href="/user/logout">Log Out</a></li>
+    </ul>
+    <br>
+    
+    <div class="flex-container">
+        <div style="font-weight: bolder;font-size: 25px;">
+        </div>
+        <div style="font-weight: bolder;font-size: 25px;"><%= user.rollnumber %><br><span
+                style="font-weight: bolder;font-size: 25px;"><%= user.name %></span></div>
+    </div>
+    <br><br>
+    <% if(user.flag ==false){%>
+    <table>
+        <tr><th>Subject</th>
+            <th>Attended</th>
+            <th>Total</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><%= user.engAttended %></td>
+            <td><%= user.engTotal %></td>
+            <td><%= user.engPercentage %>%</td>
+        </tr>
+        <tr>
+            <td>Math</td>
+            <td><%= user.mathAttended %></td>
+            <td><%= user.mathTotal %></td>
+            <td><%= user.mathPercentage %>%</td>
+        </tr>
+        <tr>
+            <td>Physics</td>
+            <td><%= user.phyAttended %></td>
+            <td><%= user.phyTotal %></td>
+            <td><%= user.phyPercentage %>%</td>
+        </tr>
+        <tr>
+            <td>Chemistry</td>
+            <td><%= user.chemAttended %></td>
+            <td><%= user.chemTotal %></td>
+            <td><%= user.chemPercentage %>%</td>
+        </tr>
+    </table>
+    <% } %>
+    <% if(user.flag == true){%>
+        <%-include('./partials/messages.ejs'); %>
+       
+        <form action="/user/attendance" method="POST">
+            <div class="form-group">
+                <label for="collegeid"><b>Enter Student ID</b></label>
+                <input type="number" id="rollnumber" name="rollnumber" " class=" form-control" placeholder="Student ID" />
+            </div>
+            <button type="submit"  class="btn btn-primary btn-block">
+                Submit
+            </button>
+        </form>
+
+       
+      
+
+    <% } %>
+</body>
+
+</html>

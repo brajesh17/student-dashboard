@@ -1,0 +1,48 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        animation: bgcolor infinite 5s;
+    }
+
+    @keyframes bgcolor {
+        0% {
+            background: #eccc68;
+        }
+
+        20% {
+            background: #ff7f50;
+        }
+
+        40% {
+            background: #ff6348;
+        }
+
+        60% {
+            background: #ff6b81;
+        }
+
+        80% {
+            background: #feca57;
+        }
+
+        100% {
+            background: #eccc68;
+        }
+    }
+</style>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body text-center">
+                <p style="font-size:60px; font-family: 'freestyle script';margin-left: 35px;">Student Dashboard</p>
+                <h1><i class="fas fa-yin-yang fa-3x"></i></h1>
+                <%-include('./partials/messages.ejs'); %>
+                <p>Select your identity</p>
+                <a href="/user/register2" class="btn btn-primary btn-block mb-2">Teacher</a>
+                <a href="/user/register" class="btn btn-secondary btn-block">Student</a>
+            </div>
+        </div>
+    </div>
+</body>
